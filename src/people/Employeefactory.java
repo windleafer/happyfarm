@@ -8,7 +8,7 @@ public class Employeefactory {
         if(career == null){
             return null;
         }
-        if(career.equalsIgnoreCase("chef")){
+        if(career.equalsIgnoreCase("breeder")){
             return new Breeder();
         }
         else if(career.equalsIgnoreCase("farmer")){
@@ -17,8 +17,6 @@ public class Employeefactory {
         else if  (career.equalsIgnoreCase("salesman")){
             return new Salesman();
         }
-  
-        
         return null;
     }
 

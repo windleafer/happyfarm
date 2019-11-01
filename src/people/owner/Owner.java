@@ -6,7 +6,7 @@ import people.employee.Salesman;
 import people.owner.command.Command;
 import people.owner.command.ReturnOrder;
 import people.owner.memento.Memento;
-import product.Order;
+import prototype.Order;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -14,7 +14,7 @@ import java.util.List;
 public class Owner implements People {
     //鍒涘缓 owner 鐨勪竴涓璞�
     private volatile static Owner instance;
-    private int money ;   //money鐢ㄦ潵瀹炵幇澶囧繕褰曟ā寮�
+    public int money ;   //money鐢ㄦ潵瀹炵幇澶囧繕褰曟ā寮�
     private Memento memento;
     private Salesman salesman;
     private List<Command> commandList = new ArrayList<Command>();
@@ -35,7 +35,7 @@ public class Owner implements People {
 
     @Override
     public void work() {
-        System.out.println("鍙戝伐璧勪粈涔堢殑");
+        System.out.println("Owner Work");
     }
 
  
