@@ -7,6 +7,7 @@ import people.owner.command.Command;
 import people.owner.command.ReturnOrder;
 import people.owner.memento.Memento;
 import prototype.Order;
+import room.Accommodation;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -34,7 +35,7 @@ public class Owner implements People {
     }
 
     @Override
-    public void work() {
+    public void work(Accommodation accommodation) {
         System.out.println("Owner Work");
     }
 
