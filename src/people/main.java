@@ -11,15 +11,20 @@ import people.owner.command.ReturnOrder;
 import people.owner.command.SubmitOrder;
 import prototype.FishOrder;
 import prototype.Order;
+import room.Accommodation;
 import room.ChickenCoop;
+import room.Field;
 
 public class main {
     public static void main(String[] args)
     {
 
+        ChickenCoop chickenCoop=new ChickenCoop();
+        Field field =new Field();
+        Market market=new Market();
         //单例模式测试
         Owner owner=Owner.getInstance();
-        owner.work();
+        owner.work(chickenCoop);
         System.out.println("\n");
 
         //工厂模式测试
@@ -27,23 +32,23 @@ public class main {
         People breeder=employeefactor.getcareer("breeder");
         People farmer=employeefactor.getcareer("farmer");
         People salesman=employeefactor.getcareer("salesman");
-        breeder.work();
-        farmer.work();
-        salesman.work();
+        breeder.work(chickenCoop);
+        farmer.work(field);
+        salesman.work(market);
         System.out.println("\n");
 
         //装饰器模式测试
         FarmerOwnerDecorator farmerowner=new FarmerOwnerDecorator(new Farmer());
-        farmer.work();
-        farmerowner.work();
+        farmer.work(field);
+        farmerowner.work(field);
 
         BreederOwnerDecorator breederowner= new BreederOwnerDecorator((new Breeder()));
-        breeder.work();
-        breederowner.work();
+        breeder.work(chickenCoop);
+        breederowner.work(chickenCoop);
 
         SalesmanOwnerDecorator salesmanOwnerDecorator=new SalesmanOwnerDecorator(new Salesman());
-        salesman.work();
-        salesmanOwnerDecorator.work();
+        salesman.work(field);
+        salesmanOwnerDecorator.work(market);
 
         System.out.println("\n");
 

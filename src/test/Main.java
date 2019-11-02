@@ -1,7 +1,5 @@
 package test;
 
-import java.util.List;
-
 import Plant.*;
 import abstractfactory.AbstractFactory;
 import abstractfactory.FactoryProducer;
