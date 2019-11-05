@@ -4,6 +4,7 @@ import Plant.*;
 import abstractfactory.AbstractFactory;
 import abstractfactory.FactoryProducer;
 import animal.Animal;
+import animal.InitializeAnimal;
 import fertilize.Farmer;
 import Sleep.*;
 
@@ -47,5 +48,9 @@ public class Main {
         Animal.petdog.sleep();
         
         Farmer.doFertilize();
+        InitializeAnimal ia = new InitializeAnimal();
+        ia.showchicken();
+        ia.showcow();
+        ia.showfish();
     }
 }
